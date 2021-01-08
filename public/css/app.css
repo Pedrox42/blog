@@ -2932,6 +2932,18 @@ input[type=button].btn-block {
   display: none;
 }
 
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsing {
+    transition: none;
+  }
+}
+
 .dropup,
 .dropright,
 .dropdown,

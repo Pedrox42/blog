@@ -1,13 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <button class="navbar-toggler float-left" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler float-left" type="button" id="navbar-button" onclick="toggleClasses()">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="float-left">
     <a class="navbar-brand ml-4" href="#"><img src="{{ asset('img/colegio.png')}}" alt="Logo do Colégio" width="75" height="75"></a>
   </div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-dark sidebar" id="navbarNav">
-  <div class="navbar navbar-collapse sidebar">
+<nav class="navbar-dark sidebar">
+  <div class="navbar sidebar" id="sidebar">
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#">Materiais</a>
