@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'eeb6d8b5a736579e6d51d9f60649af7eadd1ea20',
+    'reference' => 'a89dec5f8cbb358b992513ba5ab8d963e71fb9c6',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -467,7 +467,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'eeb6d8b5a736579e6d51d9f60649af7eadd1ea20',
+      'reference' => 'a89dec5f8cbb358b992513ba5ab8d963e71fb9c6',
     ),
     'laravel/sail' => 
     array (
@@ -522,6 +522,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '353f66d7555d8a90781f6f5e7091932f9a4250aa',
+    ),
+    'lucascudo/laravel-pt-br-localization' => 
+    array (
+      'pretty_version' => 'v1.1.5',
+      'version' => '1.1.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ec6297f950101be541062243f3fb1b7867641dbe',
     ),
     'mockery/mockery' => 
     array (
