@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="container col-sm-4">
         <div class="text-center">
-            <img class="img-fluid mt-3" src="{{asset('img/colegio.jpg')}}" alt="Logo do colégio" width="300px" height="300px">
+            <img class="img-fluid mt-3" src="{{asset('img/colegio.png')}}" alt="Logo do colégio" width="300px" height="300px">
         </div>
 
         <form method="POST" action="{{ route('login') }}" class="text-center">
