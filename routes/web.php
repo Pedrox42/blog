@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [PagesController::class, 'index'])->name('dashboard');
+    Route::get('/{id}', [PagesController::class, 'material'])->name('material');
 });
 
 require __DIR__.'/auth.php';

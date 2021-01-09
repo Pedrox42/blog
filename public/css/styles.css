@@ -37,17 +37,12 @@ body {
 
 .sidebar {
   height: 100% !important;
-  /* Full-height: remove this if you want "auto" height */
   width: 200px !important;
-  /* Set the width of the sidebar */
   position: fixed !important;
-  /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1 !important;
   top: 0 !important;
-  /* Stay at the top */
   left: 0 !important;
   overflow-x: hidden !important;
-  /* Disable horizontal scroll */
   padding-top: 20px !important;
   transition: width 0.1s ease !important;
 }
@@ -74,6 +69,14 @@ body {
 
 .material-card {
   margin-left: 15%;
+}
+
+.page-link {
+  color: #024383;
+}
+
+.page-item.active .page-link {
+  background-color: #024383 !important;
 }
 
 @media (max-width: 1025px) {
