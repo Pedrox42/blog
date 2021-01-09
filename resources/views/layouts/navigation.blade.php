@@ -2,22 +2,30 @@
   <button class="navbar-toggler float-left" type="button" id="navbar-button" onclick="toggleClasses()">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="float-left">
-    <a class="navbar-brand ml-4" href="#"><img src="{{ asset('img/colegio.png')}}" alt="Logo do Colégio" width="75" height="75"></a>
+  <div class="float-left ml-3">
+    <a class="ml-4 school-logo" id="school-logo" href="#"><img src="{{ asset('img/colegio.png')}}" alt="Logo do Colégio" width="100" height="100"></a>
+  </div>
+  <div class="text-white navbar-title col-sm-12 ml-5 text-center">
+    <h1>Colégio de Aplicação João XXIII/UFJF</h1>
   </div>
 </nav>
-<nav class="navbar-dark sidebar">
-  <div class="navbar sidebar" id="sidebar">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Materiais</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Perfil</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sair</a>
-      </li>
-    </ul>
+<nav class="navbar-dark">
+  <div class="">
+    <div class="sidebar" id="sidebar">
+      <ul class="navbar-nav sidebar-links">
+        <li class="nav-item active">
+          <a class="nav-link mb-3 mt-5" href="#" id="materials"><i class="fas fa-book"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mb-3" href="#" id="profile"><i class="fas fa-user"></i></a>
+        </li>
+        <li class="nav-item">
+          <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <a class="nav-link" id="logout" href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();"><i class="fas fa-power-off"></i></a>
+          </form>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

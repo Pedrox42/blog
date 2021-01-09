@@ -19,11 +19,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'a89dec5f8cbb358b992513ba5ab8d963e71fb9c6',
+    'reference' => '3894a0c198f341390d857ebae4541c0b8c0a2a5a',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'aalaap/faker-youtube' => 
+    array (
+      'pretty_version' => '2.0.3',
+      'version' => '2.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'eff2f96ee3f9a845d23140dd1721b14103b5c4d3',
+    ),
     'asm89/stack-cors' => 
     array (
       'pretty_version' => 'v2.0.2',
@@ -467,7 +476,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'a89dec5f8cbb358b992513ba5ab8d963e71fb9c6',
+      'reference' => '3894a0c198f341390d857ebae4541c0b8c0a2a5a',
     ),
     'laravel/sail' => 
     array (

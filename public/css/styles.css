@@ -1,20 +1,40 @@
+body {
+  font-family: "Cuprum", sans-serif;
+  overflow-x: hidden;
+}
+
 .required {
   color: red;
 }
 
 .navbar {
   background-color: #024383 !important;
-  z-index: 100;
+  z-index: 100 !important;
+  height: 120px !important;
 }
 
 .material {
   color: #024383 !important;
 }
 
+.material-description {
+  font-size: 16px;
+}
+
+.material-details {
+  color: grey;
+  font-size: 12px;
+}
+
+.school-logo {
+  margin-top: -40px;
+  position: fixed;
+}
+
 .sidebar {
   height: 100% !important;
   /* Full-height: remove this if you want "auto" height */
-  width: 160px !important;
+  width: 200px !important;
   /* Set the width of the sidebar */
   position: fixed !important;
   /* Fixed Sidebar (stay in place on scroll) */
@@ -25,29 +45,64 @@
   overflow-x: hidden !important;
   /* Disable horizontal scroll */
   padding-top: 20px !important;
-  transition: width 0.2s;
+  transition: width 0.1s ease !important;
 }
 
-.sidebar ul {
+.sidebar-links {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
   display: block;
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 0.1s;
+          animation-duration: 0.1s;
 }
 
 .sidebar-collapse {
   width: 0;
-  height: 0;
-  transition: width 0.2s;
+}
+
+.sidebar-collapse ul {
+  display: none;
 }
 
 .material-card {
   margin-left: 15%;
 }
 
+@media (max-width: 1025px) {
+  .material-card {
+    margin-left: 22%;
+  }
+}
 @media (max-width: 991px) {
   .material-card {
     margin-left: 0;
+  }
+
+  .navbar-title {
+    display: none;
+  }
+
+  .sidebar {
+    width: 90px !important;
+  }
+}
+@-webkit-keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
