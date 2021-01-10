@@ -52,4 +52,37 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+    public function show(User $user)
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        return view('profile', compact('user'));
+    }
+
+    public function edit(User $user)
+    {
+        $user = User::where('id', Auth::user()->id)->first();
+        return view('profile', compact('user'));
+    }
+
+    public function update(Request $request, User $user)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|confirmed|min:8',
+            'function' => 'required',
+            'enrollment' => 'required',
+            ]);
+        $data = $request->all();
+        $data['password'] = Hash::make($data['password']);
+        $user->update($data);
+        return redirect(route('user.show', $user->id));
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect(route('dashboard'));
+    }
 }

@@ -19,6 +19,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [PagesController::class, 'index'])->name('dashboard');
     Route::resource('/post', 'App\Http\Controllers\PostController');
     Route::resource('/comment', 'App\Http\Controllers\CommentController');
+    Route::resource('/user', 'App\Http\Controllers\Auth\RegisteredUserController');
 });
 
 require __DIR__.'/auth.php';

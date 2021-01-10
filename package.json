@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "jquery": "^3.5.1",
-        "jquery-form": "^4.3.0"
+        "jquery-form": "^4.3.0",
+        "select2": "^4.0.13"
     }
 }
