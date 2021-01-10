@@ -24,7 +24,7 @@ class PostFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween($min = 1, $max = 21),
             'title' => $this->faker->sentence($nbWords = 3, $variableNbWords = true),
-            'link' => "https://www.youtube.com/watch?v=qhuiR59-UHs",
+            'link' => "https://www.youtube.com/embed/qhuiR59-UHs",
             'description' => $this->faker->paragraph($nbSentences = 5, $variableNbSentences = true),
         ];
     }

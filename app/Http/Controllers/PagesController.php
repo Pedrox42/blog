@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Comment;
 
 class PagesController extends Controller
 {
@@ -25,8 +26,11 @@ class PagesController extends Controller
      */
     public function material($id)
     {
-        $material = Post::where('id', $id);
-        return view('material', compact('material'));
+        $material = Post::where('id', $id)->first();
+        $comments = Comment::where('post_id', $id)->get();
+        $lastComment = count($comments->all());
+        $i = 0;
+        return view('material', compact('material', 'comments', 'lastComment', 'i'));
     }
 
     /**

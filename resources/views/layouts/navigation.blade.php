@@ -14,7 +14,7 @@
     <div class="sidebar" id="sidebar">
       <ul class="navbar-nav sidebar-links">
         <li class="nav-item active">
-          <a class="nav-link mb-3 mt-5" href="#" id="materials"><i class="fas fa-book"></i></a>
+          <a class="nav-link mb-3 mt-5" href="{{ route('dashboard') }}" id="materials"><i class="fas fa-book"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link mb-3" href="#" id="profile"><i class="fas fa-user"></i></a>
