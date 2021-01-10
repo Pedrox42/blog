@@ -79,8 +79,22 @@ body {
   background-color: #024383 !important;
 }
 
-.comment-area {
+.text-area {
   width: 95% !important;
+  resize: none;
+}
+
+.btn-primary {
+  background-color: #024383;
+}
+
+.resize-none {
+  resize: none;
+}
+
+.no-comments {
+  font-size: large;
+  color: gray;
 }
 
 @media (max-width: 1025px) {

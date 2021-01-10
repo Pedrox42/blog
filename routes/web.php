@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,8 @@ use App\Http\Controllers\PagesController;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [PagesController::class, 'index'])->name('dashboard');
-    Route::get('/{id}', [PagesController::class, 'material'])->name('material');
+    Route::resource('/post', 'App\Http\Controllers\PostController');
+    Route::resource('/comment', 'App\Http\Controllers\CommentController');
 });
 
 require __DIR__.'/auth.php';

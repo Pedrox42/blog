@@ -3,29 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +18,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        $data['link'] = "https://www.youtube.com/embed/" . explode('=', $request['link'])[1];
+        $material = Post::create($data);
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -46,7 +33,12 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $material = Post::where('id', $post->id)->first();
+        $comments = Comment::where('post_id', $post->id)->get()->sortByDesc('created_at');
+        $newComment = new Comment();
+        $lastComment = count($comments->all());
+        $i = 0;
+        return view('material', compact('material', 'comments', 'lastComment', 'i'));
     }
 
     /**
