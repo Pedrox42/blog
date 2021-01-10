@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
 
+    public function __construct(){
+        $this->authorizeResource(Post::class, 'post');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
