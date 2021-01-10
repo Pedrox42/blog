@@ -21,9 +21,4 @@ class PagesController extends Controller
         return view('dashboard', compact('posts', 'lastPost', 'i'));
     }
 
-    public function material($id)
-    {
-        
-    }
-
 }
