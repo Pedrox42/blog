@@ -14,8 +14,8 @@
   <div class="">
     <div class="sidebar" id="sidebar">
       <ul class="navbar-nav sidebar-links">
-        <li class="nav-item {{ !Route::is('user.show', 'user.edit') ? 'active' : '' }}">
-          <a class="nav-link mb-3 mt-5" href="{{ route('dashboard') }}" id="materials"><i class="fas fa-book"></i></a>
+        <li class="nav-item {{ Route::is('post.index') || Route::is('post.show') ? 'active' : '' }}">
+          <a class="nav-link mb-3 mt-5" href="{{ route('post.index') }}" id="materials"><i class="fas fa-book"></i></a>
         </li>
         <li class="nav-item {{ Route::is('user.show', 'user.edit') ? 'active' : '' }}">
           <a class="nav-link mb-3" href="{{ route('user.show', Auth::user()->id) }}" id="profile"><i class="fas fa-user"></i></a>

@@ -15,6 +15,16 @@ class PostController extends Controller
         $this->authorizeResource(Post::class, 'post');
     }
 
+    public function index()
+    {
+        // $posts = Post::all()->sortByDesc('created_at');
+        //Paginação para a pagina nao ficar muito pesada quando existirem muitos posts
+        $posts = Post::orderBy('created_at', 'desc')->paginate(20);
+        $lastPost = count($posts->all());
+        $i = 0;
+        return view('dashboard', compact('posts', 'lastPost', 'i'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -27,7 +37,7 @@ class PostController extends Controller
         $data['user_id'] = Auth::user()->id;
         $data['link'] = Post::adjustLink($request['link']);
         $material = Post::create($data);
-        return redirect()->route('dashboard')->with('toast_success', 'Ação realizada com sucesso!');
+        return redirect()->route('post.index')->with('toast_success', 'Ação realizada com sucesso!');
     }
 
     /**
@@ -44,17 +54,6 @@ class PostController extends Controller
         $lastComment = count($comments->all());
         $i = 0;
         return view('material', compact('material', 'comments', 'lastComment', 'i'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Post $post)
-    {
-        //
     }
 
     /**
@@ -84,6 +83,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect(route('dashboard'))->with('toast_success', 'Ação realizada com sucesso!');
+        return redirect(route('post.index'))->with('toast_success', 'Ação realizada com sucesso!');
     }
 }

@@ -16,10 +16,10 @@ use App\Http\Controllers\PostController;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', [PagesController::class, 'index'])->name('dashboard');
     Route::resource('/post', 'App\Http\Controllers\PostController');
     Route::resource('/comment', 'App\Http\Controllers\CommentController');
     Route::resource('/user', 'App\Http\Controllers\Auth\RegisteredUserController');
+    Route::get('/', [PostController::class, 'index'])->name('dashboard');
 });
 
 require __DIR__.'/auth.php';
