@@ -109,13 +109,13 @@
                         </form>
                     @else
                         <a href="{{ route('user.edit', $user->id)}}" class="mr-2 btn btn-primary"><i class="fas fa-edit"></i> Editar</a>
-                        <a data-toggle="modal" data-target="#deleteModal" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Excluir</a>
+                        <a data-toggle="modal" data-target="#deleteUserModal" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Excluir</a>
                     @endif
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" tabindex="-1" role="dialog" id="deleteModal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="deleteUserModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
@@ -138,7 +138,6 @@
             </div>
             </div>
         </div>
-    </form>
         @push('scripts')
             <script src="{{ asset('js/collapse.js') }}"></script>
         @endpush

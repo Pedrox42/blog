@@ -65,7 +65,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        $data['link'] = "https://www.youtube.com/embed/" . explode('=', $request['link'])[1];
+        $post->update($data);
+        return redirect(route('post.show', $post->id));
     }
 
     /**
@@ -76,6 +80,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect(route('dashboard'));
     }
 }

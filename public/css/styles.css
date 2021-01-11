@@ -97,6 +97,14 @@ body {
   color: gray;
 }
 
+.text-primary {
+  color: #024383 !important;
+}
+
+.link-icon:hover {
+  text-decoration: none;
+}
+
 @media (max-width: 1025px) {
   .material-card {
     margin-left: 22%;

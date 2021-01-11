@@ -53,7 +53,7 @@ class CommentPolicy
      */
     public function update(User $user, Comment $comment)
     {
-        return ($user->function == 0 ? true : false);
+        return (($user->function == 0 && ($user->id == $comment->user->id)) ? true : false);
     }
 
     /**
@@ -65,7 +65,7 @@ class CommentPolicy
      */
     public function delete(User $user, Comment $comment)
     {
-        return ($user->function == 0 ? true : false);
+        return (($user->function == 0 && ($user->id == $comment->user->id)) ? true : false);
     }
 
     /**
@@ -89,6 +89,6 @@ class CommentPolicy
      */
     public function forceDelete(User $user, Comment $comment)
     {
-        return ($user->function == 0 ? true : false);
+        return (($user->function == 0 && ($user->id == $comment->user->id)) ? true : false);
     }
 }

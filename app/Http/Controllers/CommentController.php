@@ -25,16 +25,6 @@ class CommentController extends Controller
         $newComment = Comment::create($data);
         return redirect(route('post.show', $data['post_id']));
     }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Comment $comment)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -45,7 +35,12 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $data = $request->all();
+        if($data['comment'] == null){
+            $data['comment'] = old('comment', $comment->comment);
+        }
+        $comment->update($data);
+        return redirect(route('post.show', $comment->post->id));
     }
 
     /**
@@ -56,6 +51,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $postId = $comment->post->id;
+        $comment->delete();
+        return redirect(route('post.show', $postId));
     }
 }

@@ -4,12 +4,18 @@
     <div class="container mt-3 mb-3">
         <div class="card material-card">
             <div class="card-header">
-                <h1 class="text-center mt-3"><i class="fas fa-book-reader"></i> Bem vindo, {{ Auth::user()->name}}
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h1 class="mt-3"><i class="fas fa-book-reader"></i> Bem vindo, {{ Auth::user()->name}}</h1>
+                    </div>
                     @if(Auth::user()->function == 1)
-                        <button class="btn btn-dark float-right rounded-pill" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i> Adicionar</button>
+                    <div class="col-sm-12 mt-4 text-center">
+                        <button class="btn btn-dark rounded-pill" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i> Adicionar</button>
+                    </div>
                     @endif
-                </h1>
+                </div>
             </div>
+            
             @forelse($posts as $post)
                 @php
                     $i++;
