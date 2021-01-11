@@ -5,7 +5,7 @@
             <div class="card-header">
                 <h1 class="text-center mt-3">Meu Perfil</h1>
             </div>
-            <div>
+            <div class="container">
                 @if(Route::is('user.edit'))
                     <form method="POST" action="{{ route('user.update', $user->id) }}">
                     @csrf
