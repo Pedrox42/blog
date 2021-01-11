@@ -7,6 +7,7 @@
   </div>
   <div class="text-white navbar-title col-sm-12 ml-5 text-center">
     <h1>Colégio de Aplicação João XXIII/UFJF</h1>
+    <h5>1º ano do Ensino Médio</h5>
   </div>
 </nav>
 <nav class="navbar-dark">
