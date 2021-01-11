@@ -18,7 +18,9 @@
             
             @forelse($posts as $post)
                 @php
+                if(isset($i)){
                     $i++;
+                }
                 @endphp
                 @if($i == $lastPost)
                     <div class="ml-3 mr-2 mt-5 mb-5">
@@ -38,7 +40,7 @@
                 </div>
             @endforelse
             <div class="d-flex justify-content-center">
-                {!! $posts->links() !!}
+                {{-- {!! $posts->links() !!} --}}
             </div>
         </div>
         <!-- Modal para adicionar material -->

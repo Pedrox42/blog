@@ -194,7 +194,7 @@
             </div>
         </div>
     </div>
+    @push('scripts')
+        <script src="{{ asset('js/commentFunctions.js') }}"></script>
+    @endpush
 </x-app-layout>
-@push('scripts')
-    <script src="{{ asset('js/commentFunctions.js') }}"></script>
-@endpush

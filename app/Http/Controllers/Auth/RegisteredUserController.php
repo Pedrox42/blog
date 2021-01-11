@@ -77,7 +77,7 @@ class RegisteredUserController extends Controller
         $data = $request->all();
         $data['password'] = Hash::make($data['password']);
         $user->update($data);
-        return redirect(route('user.show', $user->id));
+        return redirect(route('user.show', $user->id))->with('toast_success', 'Ação realizada com sucesso!');
     }
 
     public function destroy(User $user)

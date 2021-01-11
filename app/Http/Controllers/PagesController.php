@@ -15,7 +15,8 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::all()->sortByDesc('created_at');
+        // $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         $lastPost = count($posts->all());
         $i = 0;
         return view('dashboard', compact('posts', 'lastPost', 'i'));

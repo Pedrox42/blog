@@ -71,7 +71,7 @@ class PostController extends Controller
             $data['link'] = Post::adjustLink($request['link']);
         }
         $post->update($data);
-        return redirect(route('post.show', $post->id))->with('success', true);
+        return redirect(route('post.show', $post->id))->with('toast_success', 'Ação realizada com sucesso!');
     }
 
     /**
@@ -83,6 +83,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect(route('dashboard'));
+        return redirect(route('dashboard'))->with('toast_success', 'Ação realizada com sucesso!');
     }
 }

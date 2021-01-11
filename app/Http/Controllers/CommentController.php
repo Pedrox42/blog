@@ -23,7 +23,7 @@ class CommentController extends Controller
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
         $newComment = Comment::create($data);
-        return redirect(route('post.show', $data['post_id']));
+        return redirect(route('post.show', $data['post_id']))->with('toast_success', 'Ação realizada com sucesso!');
     }
 
     /**
@@ -40,7 +40,7 @@ class CommentController extends Controller
             $data['comment'] = old('comment', $comment->comment);
         }
         $comment->update($data);
-        return redirect(route('post.show', $comment->post->id));
+        return redirect(route('post.show', $comment->post->id))->with('toast_success', 'Ação realizada com sucesso!');
     }
 
     /**
@@ -53,6 +53,6 @@ class CommentController extends Controller
     {
         $postId = $comment->post->id;
         $comment->delete();
-        return redirect(route('post.show', $postId));
+        return redirect(route('post.show', $postId))->with('toast_success', 'Ação realizada com sucesso!');
     }
 }
