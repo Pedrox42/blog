@@ -27,12 +27,12 @@
                 @endphp
                 @if($i == $lastPost)
                     <div class="ml-3 mr-2 mt-5 mb-5">
-                        <h4><a href="{{ route('post.show', $post) }}" class="material"><i class="fas fa-book"></i>  {{ $post->title }}</a><small class="material-details ml-2">{{ $post->user->name }}</small><small class="material-details mr-4 pr-3 float-right">{{ date('d/m/Y', strtotime($post->created_at)) }}</small></h4>
+                        <h4><a href="{{ route('post.show', $post) }}" class="material"><i class="fas fa-book"></i>  {{ $post->title }}</a><small class="material-details ml-2">Prof. {{ $post->user->name }}</small><small class="material-details mr-4 pr-3 float-right">{{ date('d/m/Y', strtotime($post->created_at)) }}</small></h4>
                         <p class="material-description mr-1">{{ $post->description }}</p>
                     </div>    
                 @else
                     <div class="ml-3 mr-2 mt-5">
-                        <h4><a href="{{ route('post.show', $post) }}" class="material"><i class="fas fa-book"></i>  {{ $post->title }}</a><small class="material-details ml-2">{{ $post->user->name }}</small><small class="material-details mr-4 pr-3 float-right">{{ date('d/m/Y', strtotime($post->created_at)) }}</small></h4>
+                        <h4><a href="{{ route('post.show', $post) }}" class="material"><i class="fas fa-book"></i>  {{ $post->title }}</a><small class="material-details ml-2">Prof. {{ $post->user->name }}</small><small class="material-details mr-4 pr-3 float-right">{{ date('d/m/Y', strtotime($post->created_at)) }}</small></h4>
                         <p class="material-description mr-1">{{ $post->description }}</p>
                     </div>
                     <hr>
