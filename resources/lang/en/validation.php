@@ -131,8 +131,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'comment' => [
+            'required' => 'O campo comentário é obrigatório.',
         ],
     ],
 

@@ -9,10 +9,13 @@
                         <h1 class="mt-3"><i class="fas fa-book-reader"></i> Bem vindo, {{ Auth::user()->function == 1 ? 'Prof. ' : '' }}{{ Auth::user()->name}}</h1>
                     </div>
                     @if(Auth::user()->function == 1)
-                    <div class="col-sm-12 mt-4 text-center">
+                    <div class="col-sm-12 mt-1 text-center">
                         <button class="btn btn-dark rounded-pill" data-toggle="modal" data-target="#addModal"><i class="fas fa-plus"></i> Adicionar</button>
                     </div>
                     @endif
+                    <div class="col-sm-12 text-center">
+                        <x-auth-validation-errors :errors="$errors" />
+                    </div>
                 </div>
             </div>
             

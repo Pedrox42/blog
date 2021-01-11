@@ -27,6 +27,9 @@
                         <div class="text-area">
                             <input type="hidden" name="post_id" value="{{ $material->id }}">
                             <textarea class="form-control resize-none mb-2" name="comment" id="comment" placeholder="Escreva seu comentário"></textarea>
+                            @if (!isset($commentErrorId))
+                                <x-auth-validation-errors :errors="$errors" />
+                            @endif
                             <div class="text-md-right text-center">
                                 <button type="submit" class="btn btn-primary mb-3">Comentar</button>
                             </div>
@@ -183,7 +186,7 @@
                         @method('put')
                         <div class="form-group mt-3">
                             <label for="title">Comentário:<span class="required">*</span></label>
-                            <textarea class="resize-none col-sm-12" name="comment" id="editComment"></textarea>
+                            <textarea class="form-control resize-none col-sm-12" name="comment" id="editComment"></textarea>
                         </div>
                     </form>
                 </div>
