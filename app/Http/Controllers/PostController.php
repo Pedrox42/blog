@@ -24,9 +24,9 @@ class PostController extends Controller
     {
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
-        $data['link'] = "https://www.youtube.com/embed/" . explode('=', $request['link'])[1];
+        $data['link'] = Post::adjustLink($request['link']);
         $material = Post::create($data);
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('toast_success', 'Ação realizada com sucesso!');
     }
 
     /**
@@ -67,9 +67,11 @@ class PostController extends Controller
     {
         $data = $request->all();
         $data['user_id'] = Auth::user()->id;
-        $data['link'] = "https://www.youtube.com/embed/" . explode('=', $request['link'])[1];
+        if($request['link'] != $post->link){
+            $data['link'] = Post::adjustLink($request['link']);
+        }
         $post->update($data);
-        return redirect(route('post.show', $post->id));
+        return redirect(route('post.show', $post->id))->with('success', true);
     }
 
     /**

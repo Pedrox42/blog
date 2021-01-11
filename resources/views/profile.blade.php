@@ -138,7 +138,4 @@
             </div>
             </div>
         </div>
-        @push('scripts')
-            <script src="{{ asset('js/collapse.js') }}"></script>
-        @endpush
     </x-app-layout>
